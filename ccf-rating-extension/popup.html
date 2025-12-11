@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>CCF Rating Settings</title>
+    <style>
+        body {
+            width: 300px;
+            padding: 15px;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            font-size: 14px;
+        }
+
+        h2 {
+            margin-top: 0;
+            margin-bottom: 15px;
+            font-size: 16px;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 10px;
+        }
+
+        .form-group {
+            margin-bottom: 12px;
+        }
+
+        label {
+            display: flex;
+            align-items: center;
+            cursor: pointer;
+        }
+
+        input[type="checkbox"] {
+            margin-right: 8px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 6px;
+            box-sizing: border-box;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        .help-text {
+            font-size: 12px;
+            color: #666;
+            margin-top: 4px;
+        }
+
+        .actions {
+            margin-top: 20px;
+            text-align: right;
+        }
+
+        button {
+            padding: 6px 12px;
+            background-color: #1a73e8;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #1557b0;
+        }
+
+        #status {
+            margin-top: 10px;
+            color: green;
+            font-size: 12px;
+            height: 16px;
+        }
+    </style>
+</head>
+
+<body>
+    <h2>CCF Rating Settings</h2>
+
+    <div class="form-group">
+        <label>
+            <input type="checkbox" id="showTag">
+            Show Rating Tags
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label>
+            <input type="checkbox" id="showUnrecognized">
+            Show Unrecognized Items
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label>
+            <input type="checkbox" id="enableRemoteUpdate">
+            Enable Remote Update
+        </label>
+    </div>
+
+    <div class="form-group">
+        <label for="remoteUrl">Remote Data URL:</label>
+        <input type="text" id="remoteUrl" placeholder="https://...">
+        <div class="help-text">Gitee/Github Raw JSON URL</div>
+    </div>
+
+    <div class="form-group">
+        <label>
+            <input type="checkbox" id="debug">
+            Debug Mode
+        </label>
+    </div>
+
+    <div id="status"></div>
+
+    <div class="actions">
+        <button id="saveBtn">Save Settings</button>
+    </div>
+
+    <script src="popup.js"></script>
+</body>
+
+</html>

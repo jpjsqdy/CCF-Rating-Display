@@ -1,0 +1,37 @@
+{
+    "manifest_version": 3,
+    "name": "CCF Rating Display",
+    "version": "1.0.0",
+    "description": "Display CCF/SCI ratings on Scholar, DBLP, IEEE Xplore, and ACM DL.",
+    "permissions": [
+        "storage"
+    ],
+    "host_permissions": [
+        "https://raw.githubusercontent.com/*",
+        "https://gitee.com/*"
+    ],
+    "background": {
+        "service_worker": "background.js"
+    },
+    "content_scripts": [
+        {
+            "matches": [
+                "*://scholar.google.com/*",
+                "*://scholar.google.com.hk/*",
+                "*://scholar.google.cn/*",
+                "*://dblp.org/*",
+                "*://dblp.uni-trier.de/*",
+                "*://ieeexplore.ieee.org/*",
+                "*://dl.acm.org/*"
+            ],
+            "js": [
+                "content.js"
+            ],
+            "run_at": "document_end"
+        }
+    ],
+    "action": {
+        "default_popup": "popup.html",
+        "default_title": "CCF Rating Settings"
+    }
+}
